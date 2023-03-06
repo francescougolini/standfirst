@@ -11,7 +11,13 @@
 
 import * as notepad from './notepad.js';
 
+// Create a new notepad.
 window.addEventListener('load', (event) => {
-    // Create a new Notepad.
     const newNotepad = new notepad.Notepad('notepad-entry-point');
+});
+
+// Trigger a confirmation dialog before leaving the page to to prevent the inadvertent loss of content.
+window.addEventListener('beforeunload', (event) => {
+    event.preventDefault();
+    return event.returnValue = '';
 });
