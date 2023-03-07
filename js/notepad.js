@@ -174,7 +174,7 @@ class Notepad {
                 // Re-insert the note in its new position.
                 this.#notesContainer.insertBefore(note, currentNote);
 
-                let cachedNoteIDs = [this.#notesIndex.get(newIndex + 1)];
+                const cachedNoteIDs = [this.#notesIndex.get(newIndex + 1)];
 
                 this.#notesIndex.set(newIndex + 1, cachedNoteID);
 
@@ -359,7 +359,7 @@ class Notepad {
             notepadObject.notes.push(noteObject);
         }
 
-        let encodedUri = encodeURIComponent(JSON.stringify(notepadObject));
+        const encodedUri = encodeURIComponent(JSON.stringify(notepadObject));
 
         const temporaryLink = document.createElement('a');
 
@@ -380,7 +380,7 @@ class Notepad {
      * JSON file format: see exportNotepad()
      */
     importNotepad() {
-        let temporaryInput = document.createElement('input');
+        const temporaryInput = document.createElement('input');
 
         temporaryInput.type = 'file';
         temporaryInput.accept = 'application/json';
@@ -1073,7 +1073,7 @@ class Notepad {
         const noteText = note.querySelector('.note-text').textContent;
         const noteTitle = note.querySelector('.note-title').textContent;
 
-        let encodedUri = encodeURI(noteTitle + '\n\n' + noteText);
+        const encodedUri = encodeURI(noteTitle + '\n\n' + noteText);
 
         const temporaryLink = document.createElement('a');
 
